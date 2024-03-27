@@ -1,0 +1,1 @@
+{"name":"Std.Tactic.Basic","instances":[],"imports":["Init","Lean.Elab.Tactic.ElabTerm","Std.Linter","Std.Tactic.Init","Std.Tactic.SeqFocus","Std.Util.ProofWanted"],"declarations":[]}

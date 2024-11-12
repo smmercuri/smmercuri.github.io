@@ -1,1 +1,0 @@
-{"name":"Mathlib.Tactic.FunProp.Measurable","instances":[],"imports":["Init","Mathlib.MeasureTheory.MeasurableSpace.Basic","Mathlib.MeasureTheory.Constructions.BorelSpace.ContinuousLinearMap","Mathlib.Analysis.Calculus.ContDiff.Basic","Mathlib.Topology.Constructions","Mathlib.Analysis.SpecialFunctions.Log.Basic","Mathlib.Tactic.FunProp"],"declarations":[]}

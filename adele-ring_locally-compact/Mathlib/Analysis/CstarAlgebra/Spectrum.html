@@ -1,0 +1,454 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././style.css"></link><link rel="icon" href="../../.././favicon.svg"></link><link rel="mask-icon" href="../../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../../.././/declarations/declaration-data.bmp" as="image"></link><title>Mathlib.Analysis.CstarAlgebra.Spectrum</title><script defer="true" src="../../.././mathjax-config.js"></script><script defer="true" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../.././";</script><script>const MODULE_NAME="Mathlib.Analysis.CstarAlgebra.Spectrum";</script><script type="module" src="../../.././jump-src.js"></script><script type="module" src="../../.././search.js"></script><script type="module" src="../../.././expand-nav.js"></script><script type="module" src="../../.././how-about.js"></script><script type="module" src="../../.././instances.js"></script><script type="module" src="../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">Mathlib</span>.<span class="name">Analysis</span>.<span class="name">CstarAlgebra</span>.<span class="name">Spectrum</span></h2><form action="https://google.com/search" method="get" id="search_form"><input type="hidden" name="sitesearch" value="https://leanprover-community.github.io/mathlib4_docs"></input><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../../.././search.html';">Search</button><button>Google site search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../../.././Init.html">Init</a></li><li><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html">Mathlib.Algebra.Star.StarAlgHom</a></li><li><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html">Mathlib.Analysis.CstarAlgebra.Basic</a></li><li><a href="../../.././Mathlib/Analysis/SpecialFunctions/Exponential.html">Mathlib.Analysis.SpecialFunctions.Exponential</a></li><li><a href="../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html">Mathlib.Analysis.Normed.Algebra.Spectrum</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-Mathlib.Analysis.CstarAlgebra.Spectrum" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#unitary.spectrum_subset_circle"><span class="name">unitary</span>.<span class="name">spectrum_subset_circle</span></a></div><div class="nav_link"><a class="break_within" href="#spectrum.subset_circle_of_unitary"><span class="name">spectrum</span>.<span class="name">subset_circle_of_unitary</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.spectralRadius_eq_nnnorm"><span class="name">IsSelfAdjoint</span>.<span class="name">spectralRadius_eq_nnnorm</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.toReal_spectralRadius_complex_eq_norm"><span class="name">IsSelfAdjoint</span>.<span class="name">toReal_spectralRadius_complex_eq_norm</span></a></div><div class="nav_link"><a class="break_within" href="#IsStarNormal.spectralRadius_eq_nnnorm"><span class="name">IsStarNormal</span>.<span class="name">spectralRadius_eq_nnnorm</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.mem_spectrum_eq_re"><span class="name">IsSelfAdjoint</span>.<span class="name">mem_spectrum_eq_re</span></a></div><div class="nav_link"><a class="break_within" href="#selfAdjoint.mem_spectrum_eq_re"><span class="name">selfAdjoint</span>.<span class="name">mem_spectrum_eq_re</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.val_re_map_spectrum"><span class="name">IsSelfAdjoint</span>.<span class="name">val_re_map_spectrum</span></a></div><div class="nav_link"><a class="break_within" href="#selfAdjoint.val_re_map_spectrum"><span class="name">selfAdjoint</span>.<span class="name">val_re_map_spectrum</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgHom.nnnorm_apply_le"><span class="name">StarAlgHom</span>.<span class="name">nnnorm_apply_le</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgHom.norm_apply_le"><span class="name">StarAlgHom</span>.<span class="name">norm_apply_le</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgHom.instContinuousLinearMapClassComplex"><span class="name">StarAlgHom</span>.<span class="name">instContinuousLinearMapClassComplex</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgEquiv.nnnorm_map"><span class="name">StarAlgEquiv</span>.<span class="name">nnnorm_map</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgEquiv.norm_map"><span class="name">StarAlgEquiv</span>.<span class="name">norm_map</span></a></div><div class="nav_link"><a class="break_within" href="#StarAlgEquiv.isometry"><span class="name">StarAlgEquiv</span>.<span class="name">isometry</span></a></div><div class="nav_link"><a class="break_within" href="#WeakDual.Complex.instStarHomClass"><span class="name">WeakDual</span>.<span class="name">Complex</span>.<span class="name">instStarHomClass</span></a></div><div class="nav_link"><a class="break_within" href="#AlgHomClass.instStarAlgHomClass"><span class="name">AlgHomClass</span>.<span class="name">instStarAlgHomClass</span></a></div><div class="nav_link"><a class="break_within" href="#WeakDual.CharacterSpace.instStarAlgHomClass"><span class="name">WeakDual</span>.<span class="name">CharacterSpace</span>.<span class="name">instStarAlgHomClass</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Spectral-properties-in-C⋆-algebras">Spectral properties in C⋆-algebras <a class="hover-link" href="#Spectral-properties-in-C⋆-algebras">#</a></h1><p>In this file, we establish various properties related to the spectrum of elements in C⋆-algebras.</p></div><div class="decl" id="unitary.spectrum_subset_circle"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L29-L39">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#unitary.spectrum_subset_circle"><span class="name">unitary</span>.<span class="name">spectrum_subset_circle</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{𝕜 : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedField">NormedField</a> <span class="fn">𝕜</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{E : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <span class="fn">𝕜</span> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(u : <span class="fn">↥<span class="fn">(<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Unitary.html#unitary">unitary</a> <span class="fn">E</span></span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <span class="fn">𝕜</span> <span class="fn">↑<span class="fn">u</span></span></span> <a href="../../.././Init/Core.html#HasSubset.Subset">⊆</a> <span class="fn"><a href="../../.././Mathlib/Topology/MetricSpace/Pseudo/Defs.html#Metric.sphere">Metric.sphere</a> <span class="fn">0</span> <span class="fn">1</span></span></span></div></div></div></div><div class="decl" id="spectrum.subset_circle_of_unitary"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L41-L43">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#spectrum.subset_circle_of_unitary"><span class="name">spectrum</span>.<span class="name">subset_circle_of_unitary</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{𝕜 : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedField">NormedField</a> <span class="fn">𝕜</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{E : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <span class="fn">𝕜</span> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">E</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{u : <span class="fn">E</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(h : <span class="fn"><span class="fn">u</span> <a href="../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../.././Mathlib/Algebra/Star/Unitary.html#unitary">unitary</a> <span class="fn">E</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <span class="fn">𝕜</span> <span class="fn">u</span></span> <a href="../../.././Init/Core.html#HasSubset.Subset">⊆</a> <span class="fn"><a href="../../.././Mathlib/Topology/MetricSpace/Pseudo/Defs.html#Metric.sphere">Metric.sphere</a> <span class="fn">0</span> <span class="fn">1</span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.spectralRadius_eq_nnnorm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L56-L65">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#IsSelfAdjoint.spectralRadius_eq_nnnorm"><span class="name">IsSelfAdjoint</span>.<span class="name">spectralRadius_eq_nnnorm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html#spectralRadius">spectralRadius</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">↑<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.toReal_spectralRadius_complex_eq_norm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L70-L72">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#IsSelfAdjoint.toReal_spectralRadius_complex_eq_norm"><span class="name">IsSelfAdjoint</span>.<span class="name">toReal_spectralRadius_complex_eq_norm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html#spectralRadius">spectralRadius</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span>)</span>.toReal</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></div></div><p>In a C⋆-algebra, the spectral radius of a self-adjoint element is equal to its norm.
+See <code>IsSelfAdjoint.toReal_spectralRadius_eq_norm</code> for a version involving
+<code><a href="../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html#spectralRadius">spectralRadius</a> ℝ a</code>.</p></div></div><div class="decl" id="IsStarNormal.spectralRadius_eq_nnnorm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L74-L88">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#IsStarNormal.spectralRadius_eq_nnnorm"><span class="name">IsStarNormal</span>.<span class="name">spectralRadius_eq_nnnorm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsStarNormal">IsStarNormal</a> <span class="fn">a</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html#spectralRadius">spectralRadius</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">↑<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.mem_spectrum_eq_re"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L91-L101">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#IsSelfAdjoint.mem_spectrum_eq_re"><span class="name">IsSelfAdjoint</span>.<span class="name">mem_spectrum_eq_re</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{z : <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(hz : <span class="fn"><span class="fn">z</span> <a href="../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">z</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">↑<span class="fn"><span class="fn">z</span>.re</span></span></span></div></div><p>Any element of the spectrum of a selfadjoint is real.</p></div></div><div class="decl" id="selfAdjoint.mem_spectrum_eq_re"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L104-L106">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#selfAdjoint.mem_spectrum_eq_re"><span class="name">selfAdjoint</span>.<span class="name">mem_spectrum_eq_re</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(a : <span class="fn">↥<span class="fn">(<span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#selfAdjoint">selfAdjoint</a> <span class="fn">A</span></span>)</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{z : <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(hz : <span class="fn"><span class="fn">z</span> <a href="../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">↑<span class="fn">a</span></span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">z</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">↑<span class="fn"><span class="fn">z</span>.re</span></span></span></div></div><p>Any element of the spectrum of a selfadjoint is real.</p></div></div><div class="decl" id="IsSelfAdjoint.val_re_map_spectrum"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L109-L113">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#IsSelfAdjoint.val_re_map_spectrum"><span class="name">IsSelfAdjoint</span>.<span class="name">val_re_map_spectrum</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><a href="../../.././Mathlib/Data/Complex/Basic.html#Complex.ofReal'">Complex.ofReal'</a> <a href="../../.././Init/Prelude.html#Function.comp">∘</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex.re">Complex.re</a></span> <a href="../../.././Mathlib/Init/Set.html#Set.image">''</a> <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">a</span></span></span></span></div></div><p>The spectrum of a selfadjoint is real</p></div></div><div class="decl" id="selfAdjoint.val_re_map_spectrum"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L116-L118">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#selfAdjoint.val_re_map_spectrum"><span class="name">selfAdjoint</span>.<span class="name">val_re_map_spectrum</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(a : <span class="fn">↥<span class="fn">(<span class="fn"><a href="../../.././Mathlib/Algebra/Star/SelfAdjoint.html#selfAdjoint">selfAdjoint</a> <span class="fn">A</span></span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">↑<span class="fn">a</span></span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><a href="../../.././Mathlib/Data/Complex/Basic.html#Complex.ofReal'">Complex.ofReal'</a> <a href="../../.././Init/Prelude.html#Function.comp">∘</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex.re">Complex.re</a></span> <a href="../../.././Mathlib/Init/Set.html#Set.image">''</a> <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">↑<span class="fn">a</span></span></span></span></span></div></div><p>The spectrum of a selfadjoint is real</p></div></div><div class="decl" id="StarAlgHom.nnnorm_apply_le"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L129-L138">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgHom.nnnorm_apply_le"><span class="name">StarAlgHom</span>.<span class="name">nnnorm_apply_le</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Basic.html#FunLike">FunLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Hom.html#AlgHomClass">AlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(φ : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span> <a href="../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span></span></div></div><p>A star algebra homomorphism of complex C⋆-algebras is norm contractive.</p></div></div><div class="decl" id="StarAlgHom.norm_apply_le"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L141-L142">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgHom.norm_apply_le"><span class="name">StarAlgHom</span>.<span class="name">norm_apply_le</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Basic.html#FunLike">FunLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Hom.html#AlgHomClass">AlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(φ : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></div></div><p>A star algebra homomorphism of complex C⋆-algebras is norm contractive.</p></div></div><div class="decl" id="StarAlgHom.instContinuousLinearMapClassComplex"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L146-L149">source</a></div><div class="attributes">@[instance 100]</div>
+<div class="decl_header"><span class="decl_kind">noncomputable instance</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgHom.instContinuousLinearMapClassComplex"><span class="name">StarAlgHom</span>.<span class="name">instContinuousLinearMapClassComplex</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Basic.html#FunLike">FunLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Hom.html#AlgHomClass">AlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Topology/Algebra/Module/Basic.html#ContinuousLinearMapClass">ContinuousLinearMapClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span></div></div><p>Star algebra homomorphisms between C⋆-algebras are continuous linear maps.
+See note [lower instance priority]</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">⋯</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">⋯</span></span></li></ul></details></div></div><div class="decl" id="StarAlgEquiv.nnnorm_map"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L159-L161">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgEquiv.nnnorm_map"><span class="name">StarAlgEquiv</span>.<span class="name">nnnorm_map</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Equiv.html#EquivLike">EquivLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#NonUnitalAlgEquivClass">NonUnitalAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgEquivClass">StarAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(φ : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span></span></div></div></div></div><div class="decl" id="StarAlgEquiv.norm_map"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L163-L164">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgEquiv.norm_map"><span class="name">StarAlgEquiv</span>.<span class="name">norm_map</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Equiv.html#EquivLike">EquivLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#NonUnitalAlgEquivClass">NonUnitalAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgEquivClass">StarAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(φ : <span class="fn">F</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn"><span class="fn">φ</span> <span class="fn">a</span></span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></div></div></div></div><div class="decl" id="StarAlgEquiv.isometry"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L166-L167">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#StarAlgEquiv.isometry"><span class="name">StarAlgEquiv</span>.<span class="name">isometry</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{B : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Equiv.html#EquivLike">EquivLike</a> <span class="fn">F</span> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#NonUnitalAlgEquivClass">NonUnitalAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgEquivClass">StarAlgEquivClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(φ : <span class="fn">F</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Topology/MetricSpace/Isometry.html#Isometry">Isometry</a> <span class="fn">⇑<span class="fn">φ</span></span></span></div></div></div></div><div class="decl" id="WeakDual.Complex.instStarHomClass"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L184-L195">source</a></div><div class="attributes">@[instance 100]</div>
+<div class="decl_header"><span class="decl_kind">noncomputable instance</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#WeakDual.Complex.instStarHomClass"><span class="name">WeakDual</span>.<span class="name">Complex</span>.<span class="name">instStarHomClass</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Basic.html#FunLike">FunLike</a> <span class="fn">F</span> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[hF : <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Hom.html#AlgHomClass">AlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarHomClass">StarHomClass</a> <span class="fn">F</span> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span></div></div><p>This instance is provided instead of <code><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a></code> to avoid type class inference loops.
+See note [lower instance priority]</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">⋯</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">⋯</span></span></li></ul></details></div></div><div class="decl" id="AlgHomClass.instStarAlgHomClass"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L199-L200">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#AlgHomClass.instStarAlgHomClass"><span class="name">AlgHomClass</span>.<span class="name">instStarAlgHomClass</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{F : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/FunLike/Basic.html#FunLike">FunLike</a> <span class="fn">F</span> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[hF : <span class="fn"><a href="../../.././Mathlib/Algebra/Algebra/Hom.html#AlgHomClass">AlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a> <span class="fn">F</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span></div></div><p>This is not an instance to avoid type class inference loops. See
+<code><a href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#WeakDual.Complex.instStarHomClass">WeakDual.Complex.instStarHomClass</a></code>.</p></div></div><div class="decl" id="WeakDual.CharacterSpace.instStarAlgHomClass"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/Spectrum.lean#L204-L205">source</a></div><div class="decl_header"><span class="decl_kind">noncomputable instance</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/Analysis/CstarAlgebra/Spectrum.html#WeakDual.CharacterSpace.instStarAlgHomClass"><span class="name">WeakDual</span>.<span class="name">CharacterSpace</span>.<span class="name">instStarAlgHomClass</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Algebra/Star/StarAlgHom.html#StarAlgHomClass">StarAlgHomClass</a> <span class="fn">↑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/Topology/Algebra/Module/CharacterSpace.html#WeakDual.characterSpace">WeakDual.characterSpace</a> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>)</span></span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <a href="../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a></span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">⋯</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">⋯</span></span></li></ul></details></div></div></main>
+<nav class="nav"><iframe src="../../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,1 +1,1 @@
-{"name":"Init.Data.String","instances":[],"imports":["Init.Data.String.Basic","Init.Data.String.Extra"],"declarations":[]}
+{"name":"Init.Data.String","instances":[],"imports":["Init.Data.String.Basic","Init.Data.String.Extra","Init.Data.String.Lemmas"],"declarations":[]}

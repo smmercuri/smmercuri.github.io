@@ -1,20 +1,23 @@
-<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././style.css"></link><link rel="stylesheet" href="../../.././src/pygments.css"></link><link rel="shortcut icon" href="../../.././favicon.ico"></link><link rel="prefetch" href="../../.././/declarations/declaration-data.bmp" as="image"></link><title>Mathlib.LinearAlgebra.RootSystem.Basic</title><script defer="true" src="../../.././mathjax-config.js"></script><script defer="true" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../.././";</script><script>const MODULE_NAME="Mathlib.LinearAlgebra.RootSystem.Basic";</script><script type="module" src="../../.././jump-src.js"></script><script type="module" src="../../.././search.js"></script><script type="module" src="../../.././expand-nav.js"></script><script type="module" src="../../.././how-about.js"></script><script type="module" src="../../.././instances.js"></script><script type="module" src="../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">Mathlib</span>.<span class="name">LinearAlgebra</span>.<span class="name">RootSystem</span>.<span class="name">Basic</span></h2><form action="https://google.com/search" method="get" id="search_form"><input type="hidden" name="sitesearch" value="https://leanprover-community.github.io/mathlib4_docs"></input><input type="text" name="q" autocomplete="off"></input>&#32;
-            <button id="search_button" onclick="javascript: form.action='../../.././search.html';">Search</button><button>Google site search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../../.././Init.html">Init</a></li><li><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html">Mathlib.LinearAlgebra.RootSystem.Defs</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-Mathlib.LinearAlgebra.RootSystem.Basic" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#RootPairing.root_ne"><span class="name">RootPairing</span>.<span class="name">root_ne</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.ne_zero"><span class="name">RootPairing</span>.<span class="name">ne_zero</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.ne_zero'"><span class="name">RootPairing</span>.<span class="name">ne_zero'</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.root_coroot_eq_pairing"><span class="name">RootPairing</span>.<span class="name">root_coroot_eq_pairing</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coroot_root_eq_pairing"><span class="name">RootPairing</span>.<span class="name">coroot_root_eq_pairing</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.pairing_same"><span class="name">RootPairing</span>.<span class="name">pairing_same</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coroot_root_two"><span class="name">RootPairing</span>.<span class="name">coroot_root_two</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.flip_flip"><span class="name">RootPairing</span>.<span class="name">flip_flip</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_apply"><span class="name">RootPairing</span>.<span class="name">reflection_apply</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_apply_root"><span class="name">RootPairing</span>.<span class="name">reflection_apply_root</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_apply_self"><span class="name">RootPairing</span>.<span class="name">reflection_apply_self</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_same"><span class="name">RootPairing</span>.<span class="name">reflection_same</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_invOn_self"><span class="name">RootPairing</span>.<span class="name">reflection_invOn_self</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.bijOn_reflection_root"><span class="name">RootPairing</span>.<span class="name">bijOn_reflection_root</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_apply"><span class="name">RootPairing</span>.<span class="name">coreflection_apply</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_apply_self"><span class="name">RootPairing</span>.<span class="name">coreflection_apply_self</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_eq_flip_reflection"><span class="name">RootPairing</span>.<span class="name">coreflection_eq_flip_reflection</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_self"><span class="name">RootPairing</span>.<span class="name">coreflection_self</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_invOn_self"><span class="name">RootPairing</span>.<span class="name">coreflection_invOn_self</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.bijOn_coreflection_coroot"><span class="name">RootPairing</span>.<span class="name">bijOn_coreflection_coroot</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_image_eq"><span class="name">RootPairing</span>.<span class="name">reflection_image_eq</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coreflection_image_eq"><span class="name">RootPairing</span>.<span class="name">coreflection_image_eq</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_dualMap_eq_coreflection"><span class="name">RootPairing</span>.<span class="name">reflection_dualMap_eq_coreflection</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.reflection_mul"><span class="name">RootPairing</span>.<span class="name">reflection_mul</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.isCrystallographic_iff"><span class="name">RootPairing</span>.<span class="name">isCrystallographic_iff</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.isReduced_iff"><span class="name">RootPairing</span>.<span class="name">isReduced_iff</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coxeterWeight_swap"><span class="name">RootPairing</span>.<span class="name">coxeterWeight_swap</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.IsOrthogonal.symm"><span class="name">RootPairing</span>.<span class="name">IsOrthogonal</span>.<span class="name">symm</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.IsOrthogonal_comm"><span class="name">RootPairing</span>.<span class="name">IsOrthogonal_comm</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.eq_of_pairing_pairing_eq_two"><span class="name">RootPairing</span>.<span class="name">eq_of_pairing_pairing_eq_two</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.injOn_dualMap_subtype_span_root_coroot"><span class="name">RootPairing</span>.<span class="name">injOn_dualMap_subtype_span_root_coroot</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.ext"><span class="name">RootPairing</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top'"><span class="name">RootPairing</span>.<span class="name">coroot_eq_coreflection_of_root_eq_of_span_eq_top'</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top"><span class="name">RootPairing</span>.<span class="name">coroot_eq_coreflection_of_root_eq_of_span_eq_top</span></a></div><div class="nav_link"><a class="break_within" href="#RootSystem.ext"><span class="name">RootSystem</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#RootSystem.mk'"><span class="name">RootSystem</span>.<span class="name">mk'</span></a></div><div class="nav_link"><a class="break_within" href="#RootSystem.coroot_eq_coreflection_of_root_eq"><span class="name">RootSystem</span>.<span class="name">coroot_eq_coreflection_of_root_eq</span></a></div></nav><main>
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././style.css"></link><link rel="icon" href="../../.././favicon.svg"></link><link rel="mask-icon" href="../../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../../.././/declarations/declaration-data.bmp" as="image"></link><title>Mathlib.LinearAlgebra.RootSystem.Basic</title><script defer="true" src="../../.././mathjax-config.js"></script><script defer="true" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../.././";</script><script>const MODULE_NAME="Mathlib.LinearAlgebra.RootSystem.Basic";</script><script type="module" src="../../.././jump-src.js"></script><script type="module" src="../../.././search.js"></script><script type="module" src="../../.././expand-nav.js"></script><script type="module" src="../../.././how-about.js"></script><script type="module" src="../../.././instances.js"></script><script type="module" src="../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">Mathlib</span>.<span class="name">LinearAlgebra</span>.<span class="name">RootSystem</span>.<span class="name">Basic</span></h2><form action="https://google.com/search" method="get" id="search_form"><input type="hidden" name="sitesearch" value="https://leanprover-community.github.io/mathlib4_docs"></input><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../../.././search.html';">Search</button><button>Google site search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../../.././Init.html">Init</a></li><li><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html">Mathlib.LinearAlgebra.RootSystem.Defs</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-Mathlib.LinearAlgebra.RootSystem.Basic" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#RootPairing.equiv_of_mapsTo_symm_apply"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo_symm_apply</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.equiv_of_mapsTo_apply"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo_apply</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.equiv_of_mapsTo"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.injOn_dualMap_subtype_span_root_coroot"><span class="name">RootPairing</span>.<span class="name">injOn_dualMap_subtype_span_root_coroot</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.ext"><span class="name">RootPairing</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#RootPairing.mk'"><span class="name">RootPairing</span>.<span class="name">mk'</span></a></div><div class="nav_link"><a class="break_within" href="#RootSystem.ext"><span class="name">RootSystem</span>.<span class="name">ext</span></a></div><div class="nav_link"><a class="break_within" href="#RootSystem.mk'"><span class="name">RootSystem</span>.<span class="name">mk'</span></a></div></nav><main>
 <div class="mod_doc"><h1 class="markdown-heading" id="Root-data-and-root-systems">Root data and root systems <a class="hover-link" href="#Root-data-and-root-systems">#</a></h1><p>This file contains basic results for root systems and root data.</p><h2 class="markdown-heading" id="Main-definitions-results">Main definitions / results: <a class="hover-link" href="#Main-definitions-results">#</a></h2><ul>
 <li><code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.ext">RootPairing.ext</a></code>: In characteristic zero if there is no torsion, the correspondence between
 roots and coroots is unique.</li>
 <li><code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.ext">RootSystem.ext</a></code>: In characteristic zero if there is no torsion, a root system is determined
 entirely by its roots.</li>
-<li><code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.mk'">RootSystem.mk'</a></code>: In characteristic zero if there is no torsion, to check that a family of
+<li><code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.mk'">RootPairing.mk'</a></code>: In characteristic zero if there is no torsion, to check that two finite
+familes of of roots and coroots form a root pairing, it is sufficient to check that they are
+stable under reflections.</li>
+<li><code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.mk'">RootSystem.mk'</a></code>: In characteristic zero if there is no torsion, to check that a finite family of
 roots form a root system, we do not need to check that the coroots are stable under reflections
 since this follows from the corresponding property for the roots.</li>
-</ul><h2 class="markdown-heading" id="Todo">Todo <a class="hover-link" href="#Todo">#</a></h2><ul>
+</ul><h2 class="markdown-heading" id="TODO">TODO <a class="hover-link" href="#TODO">#</a></h2><ul>
 <li>Derived properties of pairs, e.g., (ultra)parallel linearly independent pairs generate infinite
 dihedral groups.</li>
 <li>Properties of Weyl group (faithful action on roots, finiteness for finite <code>ι</code>)</li>
 <li>Conditions for existence of Weyl-invariant form (e.g., finiteness).</li>
-</ul></div><div class="decl" id="RootPairing.root_ne"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L46-L47">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.root_ne"><span class="name">RootPairing</span>.<span class="name">root_ne</span></a></span><span class="impl_arg"><span class="decl_args">
+</ul></div><div class="decl" id="RootPairing.equiv_of_mapsTo_symm_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L67-L67">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo_symm_apply"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo_symm_apply</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
@@ -27,72 +30,28 @@ dihedral groups.</li>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="fn">(p : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/PerfectPairing.html#PerfectPairing">PerfectPairing</a> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(root : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(coroot : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">N</span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(i : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(h : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span>.flip</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(hp : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(h : <span class="fn"><span class="fn">i</span> <a href="../../.././Init/Core.html#Ne">≠</a> <span class="fn">j</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span> <a href="../../.././Init/Core.html#Ne">≠</a> <span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span></span></div></div></div></div><div class="decl" id="RootPairing.ne_zero"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L49-L50">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.ne_zero"><span class="name">RootPairing</span>.<span class="name">ne_zero</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span> <a href="../../.././Init/Core.html#Ne">≠</a> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="RootPairing.ne_zero'"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L52-L53">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.ne_zero'"><span class="name">RootPairing</span>.<span class="name">ne_zero'</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span> <a href="../../.././Init/Core.html#Ne">≠</a> <span class="fn">0</span></span></div></div></div></div><div class="decl" id="RootPairing.root_coroot_eq_pairing"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L56-L58">source</a></div><div class="attributes">@[simp]</div>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo">RootPairing.equiv_of_mapsTo</a> <span class="fn">p</span> <span class="fn">root</span> <span class="fn">coroot</span> <span class="fn">i</span> <span class="fn">h</span> <span class="fn">hp</span></span>)</span>.symm</span> <span class="fn">j</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">⋯</span>.choose</span></span></div></div></div></div><div class="decl" id="RootPairing.equiv_of_mapsTo_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L67-L67">source</a></div><div class="attributes">@[simp]</div>
 <div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.root_coroot_eq_pairing"><span class="name">RootPairing</span>.<span class="name">root_coroot_eq_pairing</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo_apply"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo_apply</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
@@ -105,19 +64,27 @@ dihedral groups.</li>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="fn">(p : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/PerfectPairing.html#PerfectPairing">PerfectPairing</a> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(root : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(coroot : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">N</span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(i : <span class="fn">ι</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(h : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span>.flip</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(hp : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">j</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span></span></div></div></div></div><div class="decl" id="RootPairing.coroot_root_eq_pairing"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L60-L62">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coroot_root_eq_pairing"><span class="name">RootPairing</span>.<span class="name">coroot_root_eq_pairing</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo">RootPairing.equiv_of_mapsTo</a> <span class="fn">p</span> <span class="fn">root</span> <span class="fn">coroot</span> <span class="fn">i</span> <span class="fn">h</span> <span class="fn">hp</span></span>)</span> <span class="fn">j</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">⋯</span>.choose</span></span></div></div></div></div><div class="decl" id="RootPairing.equiv_of_mapsTo"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L68-L73">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo"><span class="name">RootPairing</span>.<span class="name">equiv_of_mapsTo</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
@@ -130,630 +97,24 @@ dihedral groups.</li>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="fn">(p : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/PerfectPairing.html#PerfectPairing">PerfectPairing</a> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(root : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(coroot : <span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Embedding/Basic.html#Function.Embedding">↪</a> <span class="fn">N</span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(i : <span class="fn">ι</span>)</span></span>
 <span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">P</span>.toLin</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">j</span> <span class="fn">i</span></span></span></div></div></div></div><div class="decl" id="RootPairing.pairing_same"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L65-L65">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.pairing_same"><span class="name">RootPairing</span>.<span class="name">pairing_same</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
+<span class="fn">(h : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span>.flip</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
 <span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">i</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></div></div></div></div><div class="decl" id="RootPairing.coroot_root_two"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L67-L69">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coroot_root_two"><span class="name">RootPairing</span>.<span class="name">coroot_root_two</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">P</span>.toLin</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></div></div></div></div><div class="decl" id="RootPairing.flip_flip"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L71-L71">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.flip_flip"><span class="name">RootPairing</span>.<span class="name">flip_flip</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.flip">RootPairing.flip</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.flip">RootPairing.flip</a> <span class="fn">P</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">P</span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L73-L75">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_apply"><span class="name">RootPairing</span>.<span class="name">reflection_apply</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(x : <span class="fn">M</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">x</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">x</span> <a href="../../.././Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.toLin</span> <span class="fn">x</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Mathlib/Algebra/Group/Defs.html#HSMul.hSMul">•</a> <span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_apply_root"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L77-L79">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_apply_root"><span class="name">RootPairing</span>.<span class="name">reflection_apply_root</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span> <a href="../../.././Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">j</span> <span class="fn">i</span></span> <a href="../../.././Mathlib/Algebra/Group/Defs.html#HSMul.hSMul">•</a> <span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_apply_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L82-L84">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_apply_self"><span class="name">RootPairing</span>.<span class="name">reflection_apply_self</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Init/Prelude.html#Neg.neg">-</a><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_same"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L87-L88">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_same"><span class="name">RootPairing</span>.<span class="name">reflection_same</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(x : <span class="fn">M</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">x</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">x</span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_invOn_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L90-L93">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_invOn_self"><span class="name">RootPairing</span>.<span class="name">reflection_invOn_self</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.InvOn">Set.InvOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span></span></div></div></div></div><div class="decl" id="RootPairing.bijOn_reflection_root"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L95-L96">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.bijOn_reflection_root"><span class="name">RootPairing</span>.<span class="name">bijOn_reflection_root</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.BijOn">Set.BijOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L98-L100">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_apply"><span class="name">RootPairing</span>.<span class="name">coreflection_apply</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(f : <span class="fn">N</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">f</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">f</span> <a href="../../.././Init/Prelude.html#HSub.hSub">-</a> <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">f</span></span> <a href="../../.././Mathlib/Algebra/Group/Defs.html#HSMul.hSMul">•</a> <span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_apply_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L103-L105">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_apply_self"><span class="name">RootPairing</span>.<span class="name">coreflection_apply_self</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Init/Prelude.html#Neg.neg">-</a><span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">i</span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_eq_flip_reflection"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L107-L108">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_eq_flip_reflection"><span class="name">RootPairing</span>.<span class="name">coreflection_eq_flip_reflection</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(f : <span class="fn">N</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">f</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.flip">RootPairing.flip</a> <span class="fn">P</span></span>)</span> <span class="fn">i</span></span>)</span> <span class="fn">f</span></span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L111-L112">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_self"><span class="name">RootPairing</span>.<span class="name">coreflection_self</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(x : <span class="fn">N</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">x</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">x</span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_invOn_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L114-L115">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_invOn_self"><span class="name">RootPairing</span>.<span class="name">coreflection_invOn_self</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.InvOn">Set.InvOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span>
-  <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span></span></div></div></div></div><div class="decl" id="RootPairing.bijOn_coreflection_coroot"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L117-L118">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.bijOn_coreflection_coroot"><span class="name">RootPairing</span>.<span class="name">bijOn_coreflection_coroot</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.BijOn">Set.BijOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_image_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L121-L123">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_image_eq"><span class="name">RootPairing</span>.<span class="name">reflection_image_eq</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Mathlib/Init/Set.html#Set.image">''</a> <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.coreflection_image_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L126-L128">source</a></div><div class="attributes">@[simp]</div>
-<div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coreflection_image_eq"><span class="name">RootPairing</span>.<span class="name">coreflection_image_eq</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Mathlib/Init/Set.html#Set.image">''</a> <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_dualMap_eq_coreflection"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L130-L133">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_dualMap_eq_coreflection"><span class="name">RootPairing</span>.<span class="name">reflection_dualMap_eq_coreflection</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">↑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Dual.html#LinearEquiv.dualMap">LinearEquiv.dualMap</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span>)</span></span> ∘ₗ <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">P</span>.toLin</span></span></span> <a href="../../.././Init/Prelude.html#Eq">=</a>   <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">P</span>.toLin</span></span> ∘ₗ <span class="fn">↑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.reflection_mul"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L135-L136">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.reflection_mul"><span class="name">RootPairing</span>.<span class="name">reflection_mul</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(x : <span class="fn">M</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span> <a href="../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">j</span></span></span>)</span> <span class="fn">x</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a>   <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">j</span></span>)</span> <span class="fn">x</span></span>)</span></span></span></div></div></div></div><div class="decl" id="RootPairing.isCrystallographic_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L138-L143">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.isCrystallographic_iff"><span class="name">RootPairing</span>.<span class="name">isCrystallographic_iff</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.IsCrystallographic">RootPairing.IsCrystallographic</a> <span class="fn">P</span></span> <a href="../../.././Init/Core.html#Iff">↔</a> <span class="fn">∀ (<span class="fn">i </span>j : <span class="fn">ι</span>), <span class="fn">∃ (z : <a href="../../.././Init/Data/Int/Basic.html#Int">ℤ</a>), <span class="fn"><span class="fn">↑<span class="fn">z</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span></span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.isReduced_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L145-L153">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.isReduced_iff"><span class="name">RootPairing</span>.<span class="name">isReduced_iff</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.IsReduced">RootPairing.IsReduced</a> <span class="fn">P</span></span> <a href="../../.././Init/Core.html#Iff">↔</a> <span class="fn">∀ (<span class="fn">i </span>j : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">i</span> <a href="../../.././Init/Core.html#Ne">≠</a> <span class="fn">j</span></span> → <span class="fn"><span class="fn"><a href="../../.././Init/Prelude.html#Not">¬</a><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/LinearIndependent.html#LinearIndependent">LinearIndependent</a> <span class="fn">R</span> <span class="fn">![<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span>, <span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span>]</span></span></span> → <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">i</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Init/Prelude.html#Neg.neg">-</a><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span></span></span></span></span></span></span></div></div></div></div><div class="decl" id="RootPairing.coxeterWeight_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L157-L158">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coxeterWeight_swap"><span class="name">RootPairing</span>.<span class="name">coxeterWeight_swap</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coxeterWeight">RootPairing.coxeterWeight</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coxeterWeight">RootPairing.coxeterWeight</a> <span class="fn">P</span> <span class="fn">j</span> <span class="fn">i</span></span></span></div></div></div></div><div class="decl" id="RootPairing.IsOrthogonal.symm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L160-L161">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.IsOrthogonal.symm"><span class="name">RootPairing</span>.<span class="name">IsOrthogonal</span>.<span class="name">symm</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.IsOrthogonal">RootPairing.IsOrthogonal</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span> <a href="../../.././Init/Core.html#Iff">↔</a> <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.IsOrthogonal">RootPairing.IsOrthogonal</a> <span class="fn">P</span> <span class="fn">j</span> <span class="fn">i</span></span></span></div></div></div></div><div class="decl" id="RootPairing.IsOrthogonal_comm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L163-L170">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.IsOrthogonal_comm"><span class="name">RootPairing</span>.<span class="name">IsOrthogonal_comm</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(h : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.IsOrthogonal">RootPairing.IsOrthogonal</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Algebra/Group/Commute/Defs.html#Commute">Commute</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">j</span></span>)</span></span></div></div></div></div><div class="decl" id="RootPairing.eq_of_pairing_pairing_eq_two"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L176-L205">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.eq_of_pairing_pairing_eq_two"><span class="name">RootPairing</span>.<span class="name">eq_of_pairing_pairing_eq_two</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <a href="../../.././Init/Data/Int/Basic.html#Int">ℤ</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(i : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(j : <span class="fn">ι</span>)</span></span>
-<span class="decl_args">
-<span class="fn">(hij : <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">i</span> <span class="fn">j</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span>)</span></span>
-<span class="decl_args">
-<span class="fn">(hji : <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.pairing">RootPairing.pairing</a> <span class="fn">P</span> <span class="fn">j</span> <span class="fn">i</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">i</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">j</span></span></div></div></div></div><div class="decl" id="RootPairing.injOn_dualMap_subtype_span_root_coroot"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L211-L218">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="fn">(hp : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">ι</span> <a href="../../.././Mathlib/Logic/Equiv/Defs.html#Equiv">≃</a> <span class="fn">ι</span></span></div></div><p>The bijection on the indexing set induced by reflection.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.equiv_of_mapsTo">RootPairing.equiv_of_mapsTo</a> <span class="fn">p</span> <span class="fn">root</span> <span class="fn">coroot</span> <span class="fn">i</span> <span class="fn">h</span> <span class="fn">hp</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a>   <span class="fn">{ <span class="fn">toFun</span> := <span class="fn">fun (<span class="fn">j</span> : <span class="fn">ι</span>) =&gt; <span class="fn"><span class="fn">⋯</span>.choose</span></span>, <span class="fn">invFun</span> := <span class="fn">fun (<span class="fn">j</span> : <span class="fn">ι</span>) =&gt; <span class="fn"><span class="fn">⋯</span>.choose</span></span>, <span class="fn">left_inv</span> := <span class="fn">⋯</span>, <span class="fn">right_inv</span> := <span class="fn">⋯</span> }</span></span></li></ul></details><details id="instances-for-list-RootPairing.equiv_of_mapsTo" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="RootPairing.injOn_dualMap_subtype_span_root_coroot"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L83-L88">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.injOn_dualMap_subtype_span_root_coroot"><span class="name">RootPairing</span>.<span class="name">injOn_dualMap_subtype_span_root_coroot</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -767,20 +128,19 @@ dihedral groups.</li>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
 </span><span class="decl_args">
 <span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
 <span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <a href="../../.././Init/Data/Int/Basic.html#Int">ℤ</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.InjOn">Set.InjOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Dual.html#LinearMap.dualMap">LinearMap.dualMap</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Submodule/LinearMap.html#Submodule.subtype">Submodule.subtype</a> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Span.html#Submodule.span">Submodule.span</a> <span class="fn">R</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span></span>)</span></span>)</span></span> ∘ₗ <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">P</span>.toLin</span></span></span>)</span></span>)</span>
-  <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span></span></div></div><p>Even though the roots may not span, coroots are distinguished by their pairing with the
-roots. The proof depends crucially on the fact that there are finitely-many roots.</p><p>Modulo trivial generalisations, this statement is exactly Lemma 1.1.4 on page 87 of SGA 3 XXI.</p></div></div><div class="decl" id="RootPairing.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L225-L241">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <a href="../../.././Init/Data/Int/Basic.html#Int">ℤ</a> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.InjOn">Set.InjOn</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Span.html#Submodule.span">Submodule.span</a> <span class="fn">R</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span></span>)</span>.subtype</span>.dualMap</span> ∘ₗ <span class="fn"><span class="fn"><span class="fn">P</span>.toLin</span>.flip</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.coroot</span></span></span>)</span></span></div></div><p>Even though the roots may not span, coroots are distinguished by their pairing with the
+roots. The proof depends crucially on the fact that there are finitely-many roots.</p><p>Modulo trivial generalisations, this statement is exactly Lemma 1.1.4 on page 87 of SGA 3 XXI.</p></div></div><div class="decl" id="RootPairing.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L95-L118">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.ext"><span class="name">RootPairing</span>.<span class="name">ext</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -794,17 +154,17 @@ roots. The proof depends crucially on the fact that there are finitely-many root
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{P₁ : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -816,8 +176,8 @@ roots. The proof depends crucially on the fact that there are finitely-many root
 <span class="decl_args">
 <span class="fn">(hc : <span class="fn"><span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P₁</span>.coroot</span></span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P₂</span>.coroot</span></span></span></span>)</span></span>
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">P₁</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">P₂</span></span></div></div><p>In characteristic zero if there is no torsion, the correspondence between roots and coroots is
-unique.</p><p>Formally, the point is that the hypothesis <code>hc</code> depends only on the range of the coroot mappings.</p></div></div><div class="decl" id="RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top'"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L246-L274">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top'"><span class="name">RootPairing</span>.<span class="name">coroot_eq_coreflection_of_root_eq_of_span_eq_top'</span></a></span><span class="impl_arg"><span class="decl_args">
+unique.</p><p>Formally, the point is that the hypothesis <code>hc</code> depends only on the range of the coroot mappings.</p></div></div><div class="decl" id="RootPairing.mk'"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L160-L178">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.mk'"><span class="name">RootPairing</span>.<span class="name">mk'</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
@@ -830,17 +190,17 @@ unique.</p><p>Formally, the point is that the hypothesis <code>hc</code> depends
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="decl_args">
 <span class="fn">(p : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/PerfectPairing.html#PerfectPairing">PerfectPairing</a> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
 <span class="decl_args">
@@ -850,61 +210,11 @@ unique.</p><p>Formally, the point is that the hypothesis <code>hc</code> depends
 <span class="decl_args">
 <span class="fn">(hp : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></span>)</span></span>
 <span class="decl_args">
-<span class="fn">(hs : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>),
-  <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">p</span>.toLin</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span>
-    <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
+<span class="fn">(hr : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span>.flip</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
 <span class="decl_args">
-<span class="fn">(hsp : <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Span.html#Submodule.span">Submodule.span</a> <span class="fn">R</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <a href="../../.././Mathlib/Order/Notation.html#Top.top">⊤</a></span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">{i : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{j : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{k : <span class="fn">ι</span>}</span></span>
-</span><span class="decl_args">
-<span class="fn">(hk : <span class="fn"><span class="fn"><span class="fn">root</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">p</span>.toLin</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">j</span></span>)</span></span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">coroot</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">j</span></span>)</span></span></span></div></div><p>This lemma exists to support the definition <code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.mk'">RootSystem.mk'</a></code> and usually should not be used
-directly. The lemma <code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top">RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top</a></code> or even
-<code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.coroot_eq_coreflection_of_root_eq">RootSystem.coroot_eq_coreflection_of_root_eq</a></code> will usually be more convenient.</p></div></div><div class="decl" id="RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L279-L284">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.coroot_eq_coreflection_of_root_eq_of_span_eq_top"><span class="name">RootPairing</span>.<span class="name">coroot_eq_coreflection_of_root_eq_of_span_eq_top</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(hsp : <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Span.html#Submodule.span">Submodule.span</a> <span class="fn">R</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn"><span class="fn">P</span>.root</span></span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <a href="../../.././Mathlib/Order/Notation.html#Top.top">⊤</a></span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">{i : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{j : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{k : <span class="fn">ι</span>}</span></span>
-</span><span class="decl_args">
-<span class="fn">(hk : <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span>)</span></span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn">P</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">j</span></span>)</span></span></span></div></div><p>In characteristic zero if there is no torsion and the roots span, if the <code>i</code>th reflection of the
-<code>j</code>th root is the <code>k</code>th root, then the corresponding relationship holds for coroots. See also
-<code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.coroot_eq_coreflection_of_root_eq">RootSystem.coroot_eq_coreflection_of_root_eq</a></code>.</p></div></div><div class="decl" id="RootSystem.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L298-L319">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="fn">(hc : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">coroot</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">coroot</span></span></span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing">RootPairing</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span></div></div><p>In characteristic zero if there is no torsion, to check that two finite familes of of roots and
+coroots form a root pairing, it is sufficient to check that they are stable under reflections.</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-RootPairing.mk'" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="RootSystem.ext"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L191-L212">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
 <span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.ext"><span class="name">RootSystem</span>.<span class="name">ext</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -918,17 +228,17 @@ directly. The lemma <code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/B
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{P₁ : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootSystem">RootSystem</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -938,7 +248,7 @@ directly. The lemma <code><a href="../../.././Mathlib/LinearAlgebra/RootSystem/B
 <span class="decl_args">
 <span class="fn">(hr : <span class="fn"><span class="fn"><span class="fn">P₁</span>.root</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">P₂</span>.root</span></span>)</span></span>
 <span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">P₁</span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">P₂</span></span></div></div><p>In characteristic zero if there is no torsion, a finite root system is determined entirely by
-its roots.</p></div></div><div class="decl" id="RootSystem.mk'"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L324-L341">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+its roots.</p></div></div><div class="decl" id="RootSystem.mk'"><div class="def"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L247-L260">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
 <span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.mk'"><span class="name">RootSystem</span>.<span class="name">mk'</span></a></span><span class="impl_arg"><span class="decl_args">
 <span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
 </span><span class="impl_arg"><span class="decl_args">
@@ -952,17 +262,17 @@ its roots.</p></div></div><div class="decl" id="RootSystem.mk'"><div class="def"
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
 <span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
 </span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
+<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Defs.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
 </span><span class="decl_args">
 <span class="fn">(p : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/PerfectPairing.html#PerfectPairing">PerfectPairing</a> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
 <span class="decl_args">
@@ -972,48 +282,10 @@ its roots.</p></div></div><div class="decl" id="RootSystem.mk'"><div class="def"
 <span class="decl_args">
 <span class="fn">(hp : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">2</span></span></span>)</span></span>
 <span class="decl_args">
-<span class="fn">(hs : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>),
-  <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/BilinearMap.html#LinearMap.flip">LinearMap.flip</a> <span class="fn"><span class="fn">p</span>.toLin</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span>
-    <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
+<span class="fn">(hs : <span class="fn">∀ (<span class="fn">i</span> : <span class="fn">ι</span>), <span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.MapsTo">Set.MapsTo</a> <span class="fn">(<span class="fn">⇑<span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Reflection.html#Module.preReflection">Module.preReflection</a> <span class="fn">(<span class="fn"><span class="fn">root</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn"><span class="fn">p</span>.toLin</span>.flip</span> <span class="fn">(<span class="fn"><span class="fn">coroot</span> <span class="fn">i</span></span>)</span></span>)</span></span>)</span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span></span>)</span></span>
 <span class="decl_args">
 <span class="fn">(hsp : <span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/Span.html#Submodule.span">Submodule.span</a> <span class="fn">R</span> <span class="fn">(<span class="fn"><a href="../../.././Mathlib/Data/Set/Defs.html#Set.range">Set.range</a> <span class="fn">⇑<span class="fn">root</span></span></span>)</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <a href="../../.././Mathlib/Order/Notation.html#Top.top">⊤</a></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootSystem">RootSystem</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span></div></div><p>In characteristic zero if there is no torsion, to check that a family of roots form a root
-system, we do not need to check that the coroots are stable under reflections since this follows
-from the corresponding property for the roots.</p><details><summary>Equations</summary><ul class="equations"><li class="equation">One or more equations did not get rendered due to their size.</li></ul></details><details id="instances-for-list-RootSystem.mk'" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="RootSystem.coroot_eq_coreflection_of_root_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/eaede86aa7777630a3826cd8f3fbf0cbaafa53e6/Mathlib/LinearAlgebra/RootSystem/Basic.lean#L345-L348">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
-<span class="decl_name"><a class="break_within" href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.coroot_eq_coreflection_of_root_eq"><span class="name">RootSystem</span>.<span class="name">coroot_eq_coreflection_of_root_eq</span></a></span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{ι : <a href="../../.././foundational_types.html">Type</a> u_1}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{R : <a href="../../.././foundational_types.html">Type</a> u_2}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{M : <a href="../../.././foundational_types.html">Type</a> u_3}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{N : <a href="../../.././foundational_types.html">Type</a> u_4}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Ring/Defs.html#CommRing">CommRing</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Group/Defs.html#AddCommGroup">AddCommGroup</a> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#Module">Module</a> <span class="fn">R</span> <span class="fn">N</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Data/Finite/Defs.html#Finite">Finite</a> <span class="fn">ι</span></span>]</span></span>
-</span><span class="decl_args">
-<span class="fn">(P : <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootSystem">RootSystem</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span>)</span></span>
-<span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/CharZero/Defs.html#CharZero">CharZero</a> <span class="fn">R</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">[<span class="fn"><a href="../../.././Mathlib/Algebra/Module/Basic.html#NoZeroSMulDivisors">NoZeroSMulDivisors</a> <span class="fn">R</span> <span class="fn">M</span></span>]</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{i : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{j : <span class="fn">ι</span>}</span></span>
-</span><span class="impl_arg"><span class="decl_args">
-<span class="fn">{k : <span class="fn">ι</span>}</span></span>
-</span><span class="decl_args">
-<span class="fn">(hk : <span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.reflection">RootPairing.reflection</a> <span class="fn"><span class="fn">P</span>.toRootPairing</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.root</span> <span class="fn">j</span></span>)</span></span></span>)</span></span>
-<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">k</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootPairing.coreflection">RootPairing.coreflection</a> <span class="fn"><span class="fn">P</span>.toRootPairing</span> <span class="fn">i</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><span class="fn">P</span>.coroot</span> <span class="fn">j</span></span>)</span></span></span></div></div><p>In characteristic zero if there is no torsion, if the <code>i</code>th reflection of the <code>j</code>th root is the
-<code>k</code>th root, then the corresponding relationship holds for coroots.</p></div></div></main>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Defs.html#RootSystem">RootSystem</a> <span class="fn">ι</span> <span class="fn">R</span> <span class="fn">M</span> <span class="fn">N</span></span></div></div><p>In characteristic zero if there is no torsion, to check that a finite family of roots form a
+root system, we do not need to check that the coroots are stable under reflections since this
+follows from the corresponding property for the roots.</p><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootSystem.mk'">RootSystem.mk'</a> <span class="fn">p</span> <span class="fn">root</span> <span class="fn">coroot</span> <span class="fn">hp</span> <span class="fn">hs</span> <span class="fn">hsp</span></span> <a href="../../.././Init/Prelude.html#Eq">=</a> <span class="fn">{ <span class="fn">toRootPairing</span> := <span class="fn"><a href="../../.././Mathlib/LinearAlgebra/RootSystem/Basic.html#RootPairing.mk'">RootPairing.mk'</a> <span class="fn">p</span> <span class="fn">root</span> <span class="fn">coroot</span> <span class="fn">hp</span> <span class="fn">hs</span> <span class="fn">⋯</span></span>, <span class="fn">span_eq_top</span> := <span class="fn">hsp</span> }</span></span></li></ul></details><details id="instances-for-list-RootSystem.mk'" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div></main>
 <nav class="nav"><iframe src="../../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

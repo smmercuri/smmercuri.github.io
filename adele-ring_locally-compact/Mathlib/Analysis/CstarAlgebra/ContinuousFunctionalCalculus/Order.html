@@ -1,0 +1,400 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../../.././style.css"></link><link rel="icon" href="../../../.././favicon.svg"></link><link rel="mask-icon" href="../../../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../../../.././/declarations/declaration-data.bmp" as="image"></link><title>Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order</title><script defer="true" src="../../../.././mathjax-config.js"></script><script defer="true" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../../../.././";</script><script>const MODULE_NAME="Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order";</script><script type="module" src="../../../.././jump-src.js"></script><script type="module" src="../../../.././search.js"></script><script type="module" src="../../../.././expand-nav.js"></script><script type="module" src="../../../.././how-about.js"></script><script type="module" src="../../../.././instances.js"></script><script type="module" src="../../../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span>Documentation</span></h1><h2 class="header_filename break_within"><span class="name">Mathlib</span>.<span class="name">Analysis</span>.<span class="name">CstarAlgebra</span>.<span class="name">ContinuousFunctionalCalculus</span>.<span class="name">Order</span></h2><form action="https://google.com/search" method="get" id="search_form"><input type="hidden" name="sitesearch" value="https://leanprover-community.github.io/mathlib4_docs"></input><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../../../.././search.html';">Search</button><button>Google site search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="../../../.././Init.html">Init</a></li><li><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Unitization.html">Mathlib.Analysis.CstarAlgebra.Unitization</a></li><li><a href="../../../.././Mathlib/Topology/ContinuousFunction/StarOrdered.html">Mathlib.Topology.ContinuousFunction.StarOrdered</a></li><li><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Instances.html">Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Instances</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#Unitization.instPartialOrder"><span class="name">Unitization</span>.<span class="name">instPartialOrder</span></a></div><div class="nav_link"><a class="break_within" href="#Unitization.instStarOrderedRing"><span class="name">Unitization</span>.<span class="name">instStarOrderedRing</span></a></div><div class="nav_link"><a class="break_within" href="#Unitization.inr_le_iff"><span class="name">Unitization</span>.<span class="name">inr_le_iff</span></a></div><div class="nav_link"><a class="break_within" href="#Unitization.inr_nonneg_iff"><span class="name">Unitization</span>.<span class="name">inr_nonneg_iff</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.le_algebraMap_norm_self"><span class="name">IsSelfAdjoint</span>.<span class="name">le_algebraMap_norm_self</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.neg_algebraMap_norm_le_self"><span class="name">IsSelfAdjoint</span>.<span class="name">neg_algebraMap_norm_le_self</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.mul_star_le_algebraMap_norm_sq"><span class="name">CstarRing</span>.<span class="name">mul_star_le_algebraMap_norm_sq</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.star_mul_le_algebraMap_norm_sq"><span class="name">CstarRing</span>.<span class="name">star_mul_le_algebraMap_norm_sq</span></a></div><div class="nav_link"><a class="break_within" href="#IsSelfAdjoint.toReal_spectralRadius_eq_norm"><span class="name">IsSelfAdjoint</span>.<span class="name">toReal_spectralRadius_eq_norm</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.norm_or_neg_norm_mem_spectrum"><span class="name">CstarRing</span>.<span class="name">norm_or_neg_norm_mem_spectrum</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.nnnorm_mem_spectrum_of_nonneg"><span class="name">CstarRing</span>.<span class="name">nnnorm_mem_spectrum_of_nonneg</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.norm_mem_spectrum_of_nonneg"><span class="name">CstarRing</span>.<span class="name">norm_mem_spectrum_of_nonneg</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.instNonnegSpectrumClassComplexNonUnital"><span class="name">CstarRing</span>.<span class="name">instNonnegSpectrumClassComplexNonUnital</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.norm_le_norm_of_nonneg_of_le"><span class="name">CstarRing</span>.<span class="name">norm_le_norm_of_nonneg_of_le</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.conjugate_le_norm_smul"><span class="name">CstarRing</span>.<span class="name">conjugate_le_norm_smul</span></a></div><div class="nav_link"><a class="break_within" href="#CstarRing.conjugate_le_norm_smul'"><span class="name">CstarRing</span>.<span class="name">conjugate_le_norm_smul'</span></a></div></nav><main>
+<div class="mod_doc"><h1 class="markdown-heading" id="Facts-about-star-ordered-rings-that-depend-on-the-continuous-functional-calculus">Facts about star-ordered rings that depend on the continuous functional calculus <a class="hover-link" href="#Facts-about-star-ordered-rings-that-depend-on-the-continuous-functional-calculus">#</a></h1><p>This file contains various basic facts about star-ordered rings (i.e. mainly C⋆-algebras)
+that depend on the continuous functional calculus.</p><p>We also put an order instance on <code><a href="../../../.././Mathlib/Algebra/Algebra/Unitization.html#Unitization">Unitization</a> ℂ A</code> when <code>A</code> is a C⋆-algebra via
+the spectral order.</p><h2 class="markdown-heading" id="Main-theorems">Main theorems <a class="hover-link" href="#Main-theorems">#</a></h2><ul>
+<li><code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#IsSelfAdjoint.le_algebraMap_norm_self">IsSelfAdjoint.le_algebraMap_norm_self</a></code> and <code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#IsSelfAdjoint.le_algebraMap_norm_self">IsSelfAdjoint.le_algebraMap_norm_self</a></code>,
+which respectively show that <code>a ≤ <a href="../../../.././Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> ℝ A ‖a‖</code> and <code>-(algebraMap ℝ A ‖a‖) ≤ a</code> in a
+C⋆-algebra.</li>
+<li><code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.mul_star_le_algebraMap_norm_sq">mul_star_le_algebraMap_norm_sq</a></code> and <code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.star_mul_le_algebraMap_norm_sq">star_mul_le_algebraMap_norm_sq</a></code>, which give similar
+statements for <code>a * star a</code> and <code>star a * a</code>.</li>
+<li><code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.norm_le_norm_of_nonneg_of_le">CstarRing.norm_le_norm_of_nonneg_of_le</a></code>: in a non-unital C⋆-algebra, if <code>0 ≤ a ≤ b</code>, then
+<code>‖a‖ ≤ ‖b‖</code>.</li>
+<li><code><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.conjugate_le_norm_smul">CstarRing.conjugate_le_norm_smul</a></code>: in a non-unital C⋆-algebra, we have that
+<code>star a * b * a ≤ ‖b‖ • (star a * a)</code> (and a primed version for the <code>a * b * star a</code> case).</li>
+</ul><h2 class="markdown-heading" id="Tags">Tags <a class="hover-link" href="#Tags">#</a></h2><p>continuous functional calculus, normal, selfadjoint</p></div><div class="decl" id="Unitization.instPartialOrder"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L44-L44">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#Unitization.instPartialOrder"><span class="name">Unitization</span>.<span class="name">instPartialOrder</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Unitization.html#Unitization">Unitization</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>)</span></span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">Unitization.instPartialOrder</span> <a href="../../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Instances.html#CstarRing.spectralOrder">CstarRing.spectralOrder</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Unitization.html#Unitization">Unitization</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>)</span></span></span></li></ul></details></div></div><div class="decl" id="Unitization.instStarOrderedRing"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L46-L46">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#Unitization.instStarOrderedRing"><span class="name">Unitization</span>.<span class="name">instStarOrderedRing</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Unitization.html#Unitization">Unitization</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>)</span></span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">⋯</span> <a href="../../../.././Init/Prelude.html#Eq">=</a> <span class="fn">⋯</span></span></li></ul></details></div></div><div class="decl" id="Unitization.inr_le_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L48-L54">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#Unitization.inr_le_iff"><span class="name">Unitization</span>.<span class="name">inr_le_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(a : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(b : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.240">_auto✝</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(hb : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">b</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.245">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">↑<span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">↑<span class="fn">b</span></span></span> <a href="../../../.././Init/Core.html#Iff">↔</a> <span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">b</span></span></span></div></div></div></div><div class="decl" id="Unitization.inr_nonneg_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L57-L63">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#Unitization.inr_nonneg_iff"><span class="name">Unitization</span>.<span class="name">inr_nonneg_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">0</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">↑<span class="fn">a</span></span></span> <a href="../../../.././Init/Core.html#Iff">↔</a> <span class="fn"><span class="fn">0</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.le_algebraMap_norm_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L72-L79">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#IsSelfAdjoint.le_algebraMap_norm_self"><span class="name">IsSelfAdjoint</span>.<span class="name">le_algebraMap_norm_self</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.700">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">A</span></span>)</span> <span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.neg_algebraMap_norm_le_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L81-L86">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#IsSelfAdjoint.neg_algebraMap_norm_le_self"><span class="name">IsSelfAdjoint</span>.<span class="name">neg_algebraMap_norm_le_self</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.883">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../../.././Init/Prelude.html#Neg.neg">-</a><span class="fn"><span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">A</span></span>)</span> <span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">a</span></span></div></div></div></div><div class="decl" id="CstarRing.mul_star_le_algebraMap_norm_sq"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L88-L90">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.mul_star_le_algebraMap_norm_sq"><span class="name">CstarRing</span>.<span class="name">mul_star_le_algebraMap_norm_sq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">A</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></span>)</span></span></span></div></div></div></div><div class="decl" id="CstarRing.star_mul_le_algebraMap_norm_sq"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L92-L94">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.star_mul_le_algebraMap_norm_sq"><span class="name">CstarRing</span>.<span class="name">star_mul_le_algebraMap_norm_sq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Defs.html#algebraMap">algebraMap</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">A</span></span>)</span> <span class="fn">(<span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Init/Prelude.html#HPow.hPow">^</a> <span class="fn">2</span></span>)</span></span></span></div></div></div></div><div class="decl" id="IsSelfAdjoint.toReal_spectralRadius_eq_norm"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L96-L98">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#IsSelfAdjoint.toReal_spectralRadius_eq_norm"><span class="name">IsSelfAdjoint</span>.<span class="name">toReal_spectralRadius_eq_norm</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Algebra/Spectrum.html#spectralRadius">spectralRadius</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">a</span></span>)</span>.toReal</span> <a href="../../../.././Init/Prelude.html#Eq">=</a> <span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></div></div></div></div><div class="decl" id="CstarRing.norm_or_neg_norm_mem_spectrum"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L100-L104">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.norm_or_neg_norm_mem_spectrum"><span class="name">CstarRing</span>.<span class="name">norm_or_neg_norm_mem_spectrum</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Logic/Nontrivial/Defs.html#Nontrivial">Nontrivial</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.1437">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">a</span></span></span> <a href="../../../.././Init/Prelude.html#Or">∨</a> <span class="fn"><span class="fn"><a href="../../../.././Init/Prelude.html#Neg.neg">-</a><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span> <a href="../../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">a</span></span></span></span></div></div></div></div><div class="decl" id="CstarRing.nnnorm_mem_spectrum_of_nonneg"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L106-L111">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.nnnorm_mem_spectrum_of_nonneg"><span class="name">CstarRing</span>.<span class="name">nnnorm_mem_spectrum_of_nonneg</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Logic/Nontrivial/Defs.html#Nontrivial">Nontrivial</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><span class="fn">0</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.1587">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#NNNorm.nnnorm">‖₊</a></span> <a href="../../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../../.././Mathlib/Data/NNReal/Basic.html#NNReal">NNReal</a> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="CstarRing.norm_mem_spectrum_of_nonneg"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L113-L115">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.norm_mem_spectrum_of_nonneg"><span class="name">CstarRing</span>.<span class="name">norm_mem_spectrum_of_nonneg</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NormedRing">NormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedAlgebra">NormedAlgebra</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Logic/Nontrivial/Defs.html#Nontrivial">Nontrivial</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><span class="fn">0</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.1738">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Init/Prelude.html#Membership.mem">∈</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Spectrum.html#spectrum">spectrum</a> <a href="../../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a> <span class="fn">a</span></span></span></div></div></div></div><div class="decl" id="CstarRing.instNonnegSpectrumClassComplexNonUnital"><div class="instance"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L126-L129">source</a></div><div class="decl_header"><span class="decl_kind">instance</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.instNonnegSpectrumClassComplexNonUnital"><span class="name">CstarRing</span>.<span class="name">instNonnegSpectrumClassComplexNonUnital</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../../../.././Mathlib/Algebra/Algebra/Quasispectrum.html#NonnegSpectrumClass">NonnegSpectrumClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span></div></div><details><summary>Equations</summary><ul class="equations"><li class="equation"><span class="fn"><span class="fn">⋯</span> <a href="../../../.././Init/Prelude.html#Eq">=</a> <span class="fn">⋯</span></span></li></ul></details></div></div><div class="decl" id="CstarRing.norm_le_norm_of_nonneg_of_le"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L131-L149">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.norm_le_norm_of_nonneg_of_le"><span class="name">CstarRing</span>.<span class="name">norm_le_norm_of_nonneg_of_le</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{b : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(ha : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><span class="fn">0</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">a</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.2012">_auto✝</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(hab : <span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">a</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">b</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span></span></div></div></div></div><div class="decl" id="CstarRing.conjugate_le_norm_smul"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L151-L160">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.conjugate_le_norm_smul"><span class="name">CstarRing</span>.<span class="name">conjugate_le_norm_smul</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{b : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(hb : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">b</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.2839">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn">b</span></span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">b</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Mathlib/Algebra/Group/Defs.html#HSMul.hSMul">•</a> <span class="fn">(<span class="fn"><span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn">a</span></span>)</span></span></span></div></div></div></div><div class="decl" id="CstarRing.conjugate_le_norm_smul'"><div class="theorem"><div class="gh_link"><a href="https://github.com/leanprover-community/mathlib4/blob/caac5b13fb72ba0c5d0b35a0067de108db65e964/Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.lean#L162-L167">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#CstarRing.conjugate_le_norm_smul'"><span class="name">CstarRing</span>.<span class="name">conjugate_le_norm_smul'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{A : <a href="../../../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Field/Basic.html#NonUnitalNormedRing">NonUnitalNormedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Topology/UniformSpace/Cauchy.html#CompleteSpace">CompleteSpace</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Init/Order/Defs.html#PartialOrder">PartialOrder</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarRing">StarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Order.html#StarOrderedRing">StarOrderedRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/CstarAlgebra/Basic.html#CstarRing">CstarRing</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Module/Basic.html#NormedSpace">NormedSpace</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#StarModule">StarModule</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#SMulCommClass">SMulCommClass</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><a href="../../../.././Mathlib/Algebra/Group/Action/Defs.html#IsScalarTower">IsScalarTower</a> <a href="../../../.././Mathlib/Data/Complex/Basic.html#Complex">ℂ</a> <span class="fn">A</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{a : <span class="fn">A</span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{b : <span class="fn">A</span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(hb : <span class="fn"><a href="../../../.././Init/Tactics.html#autoParam">autoParam</a> <span class="fn">(<span class="fn"><a href="../../../.././Mathlib/Algebra/Star/SelfAdjoint.html#IsSelfAdjoint">IsSelfAdjoint</a> <span class="fn">b</span></span>)</span> <a href="../../../.././Mathlib/Analysis/CstarAlgebra/ContinuousFunctionalCalculus/Order.html#_auto._@.Mathlib.Analysis.CstarAlgebra.ContinuousFunctionalCalculus.Order._hyg.3112">_auto✝</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn">b</span></span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span></span> <a href="../../../.././Init/Prelude.html#LE.le">≤</a> <span class="fn"><span class="fn"><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a><span class="fn">b</span><a href="../../../.././Mathlib/Analysis/Normed/Group/Basic.html#Norm.norm">‖</a></span> <a href="../../../.././Mathlib/Algebra/Group/Defs.html#HSMul.hSMul">•</a> <span class="fn">(<span class="fn"><span class="fn">a</span> <a href="../../../.././Init/Prelude.html#HMul.hMul">*</a> <span class="fn"><a href="../../../.././Mathlib/Algebra/Star/Basic.html#Star.star">star</a> <span class="fn">a</span></span></span>)</span></span></span></div></div></div></div></main>
+<nav class="nav"><iframe src="../../../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

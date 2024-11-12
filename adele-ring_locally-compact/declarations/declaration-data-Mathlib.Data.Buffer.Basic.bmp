@@ -1,1 +1,1 @@
-{"name":"Mathlib.Data.Buffer.Basic","instances":[],"imports":["Init","Mathlib.Init.Align"],"declarations":[]}
+{"name":"Mathlib.Data.Buffer.Basic","instances":[],"imports":["Init"],"declarations":[]}

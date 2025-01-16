@@ -1,10 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const hash = document.location.hash.substring(1);
-  const tgt = new URLSearchParams(document.location.search).get("jump");
-  if (tgt === "src" && hash) {
-    const target = document.getElementById(hash)
-      ?.querySelector(".gh_link a")
-      ?.getAttribute("href");
-    if (target) window.location.replace(target);
-  }
-})
+version https://git-lfs.github.com/spec/v1
+oid sha256:a1229ea3b62613aa94116d85df0e46ca18e1c7e1b9fa7db080b1837804f058b7
+size 381

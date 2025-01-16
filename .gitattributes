@@ -46,3 +46,4 @@ adele-ring_locally-compact/Mathlib.html.trace filter=lfs diff=lfs merge=lfs -tex
 adele-ring_locally-compact/how-about.js filter=lfs diff=lfs merge=lfs -text
 adele-ring_locally-compact/index.html filter=lfs diff=lfs merge=lfs -text
 adele-ring_locally-compact/instances.js filter=lfs diff=lfs merge=lfs -text
+adele-ring_locally-compact/declarations/header-data.bmp filter=lfs diff=lfs merge=lfs -text

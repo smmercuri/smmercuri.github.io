@@ -314,9 +314,8 @@
     .note-section p, .note-section .bullets li { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
 
     footer {
-      padding: 80px 0 48px; text-align: center; color: var(--muted); font-size: 13.5px;
+      padding: 72px 0 40px; text-align: center; color: var(--muted); font-size: 13px;
     }
-    footer .sig { font: italic 400 1.5rem/1 var(--serif); color: var(--ink); margin-bottom: 10px; }
 
     /* reveal on scroll (only when JS is running) */
     .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
@@ -436,8 +435,7 @@
       <section id="images" class="note-section reveal" data-md="images"></section>
 
       <footer>
-        <div class="sig" data-field="name">Salvatore Mercuri</div>
-        <span data-field="updated"></span>
+        <span data-field="footer">© Salvatore Mercuri</span>
       </footer>
     </div>
   </main>
@@ -564,7 +562,10 @@
       document.querySelectorAll('[data-field]').forEach(function (el) {
         var f = el.dataset.field;
         if (f === 'links') el.innerHTML = html;
-        else if (f === 'updated') el.textContent = p.updated ? 'Last updated ' + p.updated : '';
+        else if (f === 'footer') {
+          var year = ((p.updated || '').match(/\d{4}/) || [new Date().getFullYear()])[0];
+          el.textContent = '© ' + year + ' ' + (p.name || '') + (p.updated ? ' · Last updated ' + p.updated : '');
+        }
         else el.textContent = p[f] || '';
       });
       if (p.name) document.querySelector('.avatar img').alt = p.name;

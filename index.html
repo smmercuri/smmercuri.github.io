@@ -291,11 +291,13 @@
       isolation: isolate;
     }
     .divider::before {          /* the image casts its own coloured light */
-      content: ""; position: absolute; inset: -1%; z-index: -1;
-      background: var(--src) center / cover no-repeat;
-      filter: blur(31px) saturate(1.95);
+      /* a small pre-blurred copy (assets/*-glow.webp), stretched: looks like a CSS blur
+         but can't be clipped by the browser's tile renderer, and is cheaper to draw.
+         The glow file has a 24px margin around a 128×72 image, hence these insets. */
+      content: ""; position: absolute; inset: -33.333% -18.75%; z-index: -1;
+      background: var(--glow) center / 100% 100% no-repeat;
       opacity: .9;
-      border-radius: 32px;
+      pointer-events: none;
     }
     .divider .frame {
       height: 100%; overflow: hidden; border-radius: 16px;
@@ -398,7 +400,7 @@
         <div data-md="about"></div>
       </section>
 
-      <figure class="divider reveal" style="--src:url('assets/print1.webp')">
+      <figure class="divider reveal" style="--glow:url('assets/print1-glow.webp')">
         <div class="frame"><img src="assets/print1.webp" alt="Complex phase plot in pink and blue, coloured by argument" width="1920" height="1080" loading="lazy"></div>
       </figure>
 
@@ -408,7 +410,7 @@
         <ol class="pubs" data-md="publications"></ol>
       </section>
 
-      <figure class="divider reveal" style="--src:url('assets/thetaz6.webp')">
+      <figure class="divider reveal" style="--glow:url('assets/thetaz6-glow.webp')">
         <div class="frame"><img src="assets/thetaz6.webp" alt="Complex phase plot of a theta function, coloured by argument" width="1920" height="1080" loading="lazy"></div>
       </figure>
 
@@ -420,7 +422,7 @@
         <ul class="talks compact" data-md="conferences"></ul>
       </section>
 
-      <figure class="divider reveal" style="--src:url('assets/modeta6.webp')">
+      <figure class="divider reveal" style="--glow:url('assets/modeta6-glow.webp')">
         <div class="frame"><img src="assets/modeta6.webp" alt="Complex phase plot of a modular form, coloured by argument" width="1920" height="1080" loading="lazy"></div>
       </figure>
 

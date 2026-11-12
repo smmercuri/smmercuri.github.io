@@ -84,25 +84,6 @@
       object-fit: cover;
       object-position: left center;
     }
-    /* progressive blur on the left edge: stacked copies of the print, each blurrier and masked narrower */
-    .edge-blur { position: absolute; inset: 0; overflow: hidden; }
-    .edge-blur picture { position: absolute; inset: 0; }
-    .edge-blur picture:nth-child(1) img {
-      filter: blur(0.8px);
-      -webkit-mask-image: linear-gradient(to right, #000 10%, transparent 30%);
-              mask-image: linear-gradient(to right, #000 10%, transparent 30%);
-    }
-    .edge-blur picture:nth-child(2) img {
-      filter: blur(1.8px);
-      -webkit-mask-image: linear-gradient(to right, #000 4%, transparent 20%);
-              mask-image: linear-gradient(to right, #000 4%, transparent 20%);
-    }
-    .edge-blur picture:nth-child(3) img {
-      filter: blur(3.2px);
-      -webkit-mask-image: linear-gradient(to right, #000 0%, transparent 11%);
-              mask-image: linear-gradient(to right, #000 0%, transparent 11%);
-    }
-
     /* ───────────────────────── text column ───────────────────────── */
     main {
       position: relative;
@@ -320,9 +301,6 @@
                 mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
       }
       .print img { object-position: center bottom; }
-      .edge-blur picture:nth-child(1) img { -webkit-mask-image: linear-gradient(to bottom, #000 6%, transparent 22%); mask-image: linear-gradient(to bottom, #000 6%, transparent 22%); }
-      .edge-blur picture:nth-child(2) img { filter: blur(1.4px); -webkit-mask-image: linear-gradient(to bottom, #000 2%, transparent 14%); mask-image: linear-gradient(to bottom, #000 2%, transparent 14%); }
-      .edge-blur picture:nth-child(3) img { filter: blur(2.4px); -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 8%); mask-image: linear-gradient(to bottom, #000 0%, transparent 8%); }
       main { margin-left: 0; }
       nav.top { position: fixed; left: 0; right: 0; top: 10px; padding: 0 12px; }
       nav.top ul { overflow-x: auto; scrollbar-width: none; max-width: 100%; }
@@ -361,7 +339,6 @@
       <img src="assets/hero.webp" srcset="assets/hero.webp 1720w, assets/hero-xl.webp 3440w"
            sizes="(min-aspect-ratio: 84/55) 55vw, 84vh" alt="" fetchpriority="high">
     </picture>
-    <div class="edge-blur"></div>
   </div>
 
   <main>
@@ -607,14 +584,6 @@
 
     /* ───────────── page behaviour ───────────── */
     function start() {
-      // Left-edge blur: three copies of the hero picture (so they follow the same responsive source)
-      var pic = document.querySelector('.print picture'), host = document.querySelector('.edge-blur');
-      for (var i = 0; i < 3; i++) {
-        var c = pic.cloneNode(true);
-        c.querySelector('img').removeAttribute('fetchpriority');
-        host.appendChild(c);
-      }
-
       // Reveal-on-scroll
       var reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {

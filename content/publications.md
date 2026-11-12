@@ -1,23 +1,23 @@
 <!--
   Publications. 
 -->
-[Formal Conjectures: An Open and Evolving Benchmark for Verified Discovery in Mathematics](https://arxiv.org/pdf/2605.13171)
-with M. Firsching et al. · Preprint, 2026
+[Formal Conjectures: An Open and Evolving Benchmark for Verified Discovery in Mathematics](https://arxiv.org/abs/2605.13171)
+with M. Firsching et al. · *NeurIPS* 2026, Datasets & Benchmarks Track (to appear)
 
 [Olympiad-level formal mathematical reasoning with reinforcement learning](https://www.nature.com/articles/s41586-025-09833-y)
-with T. Hubert et al. · *Nature*, 2025
+with T. Hubert et al. · *Nature* 651 (2026), 607–613
 
 [Formalising the local compactness of the adele ring](https://afm.episciences.org/16007/pdf)
 *Annals of Formalized Mathematics* 1 (2025), 133–159 · [Code](https://github.com/smmercuri/adele-ring_locally-compact/tree/journal)
 
 [Conformal Predictions for Longitudinal Data](https://arxiv.org/abs/2310.02863)
-with D. Batra, R. Khraishi · Preprint, 2023
+with D. Batra, R. Khraishi · arXiv, 2023
 
 [Modelling customer lifetime value in the retail banking industry](https://arxiv.org/abs/2304.03038)
-with G. Cowan, R. Khraishi · Preprint, 2023
+with G. Cowan, R. Khraishi · arXiv, 2023
 
 [An Introduction to Machine Unlearning](https://arxiv.org/abs/2209.00939)
-with R. Khraishi, R. Okhrati, D. Batra, C. Hamill, T. Ghasempour, A. Nowlan · 2022
+with R. Khraishi, R. Okhrati, D. Batra, C. Hamill, T. Ghasempour, A. Nowlan · arXiv, 2022
 
 [Algebraicity of metaplectic L-functions](https://www.sciencedirect.com/science/article/pii/S0022314X20302924)
 *J. Number Theory* 219 (2021), 109–161 · [arXiv](https://arxiv.org/abs/1811.09155)

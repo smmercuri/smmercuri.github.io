@@ -1,0 +1,520 @@
+<!doctype html>
+<!--
+  Template for index.html. Edit this (layout, styling) or content/*.md (text),
+  then run:  python3 generate_html.py
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salvatore Mercuri · Mathematician, Imperial College London</title>
+  <meta name="description" content="Salvatore Mercuri is a Chapman-Schmidt Postdoctoral Fellow in the Department of Mathematics at Imperial College London, working on number theory and formal proof verification in Lean.">
+  <meta name="google-site-verification" content="oKIKfh1VhyfGFj1E33qoRTXLDfcDKCJVbJB_slgIYvg">
+  <link rel="canonical" href="https://smmercuri.github.io/">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- link previews (Slack, LinkedIn, iMessage, …) -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://smmercuri.github.io/">
+  <meta property="og:title" content="Salvatore Mercuri">
+  <meta property="og:description" content="Mathematician at Imperial College London working on number theory and formal proof verification in Lean.">
+  <meta property="og:image" content="https://smmercuri.github.io/assets/profile.jpg">
+  <meta name="twitter:card" content="summary">
+
+  <!-- tells search engines this is Salvatore Mercuri's official homepage.
+       If your title or affiliation changes, update it here as well as in content/profile.md. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Salvatore Mercuri",
+    "url": "https://smmercuri.github.io/",
+    "image": "https://smmercuri.github.io/assets/profile.jpg",
+    "jobTitle": "Chapman-Schmidt Postdoctoral Fellow",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Imperial College London",
+      "department": { "@type": "Organization", "name": "Department of Mathematics" }
+    },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Durham University" },
+      { "@type": "CollegeOrUniversity", "name": "Imperial College London" },
+      { "@type": "CollegeOrUniversity", "name": "University of Edinburgh" }
+    ],
+    "knowsAbout": ["Number theory", "Formal verification", "Lean (proof assistant)", "Interactive theorem proving"],
+    "sameAs": ["https://github.com/smmercuri"]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #15171c;
+      --ink-2: #3b4049;
+      --muted: #6b717c;
+      --hair: #e7e8eb;
+      --paper: #ffffff;
+
+      /* lifted from the print */
+      --orange: #de7200;
+      --teal: #45c2c4;
+      --blue: #0078f5;
+      --rust: #8c1f0e;
+      --link: #1a5fb8;
+
+      /* avatar ring: zetaside's colours, warm on top and cool below, like its stripes */
+      --gold: #f9cd38;
+      --sky: #30a3e3;
+      --ring: conic-gradient(from 0deg, var(--orange), var(--gold) 18%, var(--sky) 34%, var(--blue) 50%, var(--sky) 66%, var(--gold) 82%, var(--orange));
+
+      --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      /* width of the fixed print on desktop, and where the text column begins */
+      --print-w: max(55vw, 84vh);   /* never narrower than the print's natural width at full height */
+      --col-start: calc(var(--print-w) * 0.8);
+      --gutter: clamp(20px, 4vw, 72px);
+    }
+
+    @supports (background: conic-gradient(in oklab, red, blue)) {   /* smoother blend where supported */
+      :root { --ring: conic-gradient(in oklab from 0deg, var(--orange), var(--gold) 18%, var(--sky) 34%, var(--blue) 50%, var(--sky) 66%, var(--gold) 82%, var(--orange)); }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 16.5px/1.65 var(--sans);
+      font-feature-settings: "ss01", "cv11";
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    a { color: var(--link); text-decoration: none; background-image: linear-gradient(90deg, var(--orange), var(--blue)); background-size: 0 1.5px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size .35s ease, color .2s; }
+    a:hover, a:focus-visible { background-size: 100% 1.5px; color: var(--ink); }
+    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+    img { display: block; max-width: 100%; }
+
+    /* ───────────────────────── the print ───────────────────────── */
+    .print {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--print-w);
+      height: 100vh;
+      height: 100lvh;
+      z-index: 0;
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(to right, #000 78%, transparent 99%);
+              mask-image: linear-gradient(to right, #000 78%, transparent 99%);
+    }
+    .print picture, .print img {
+      width: 100%; height: 100%;
+    }
+    .print img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: left center;
+    }
+    /* ───────────────────────── text column ───────────────────────── */
+    main {
+      position: relative;
+      z-index: 1;
+      margin-left: var(--col-start);
+      padding: 0 var(--gutter);
+    }
+    .col { max-width: 640px; margin: 0 auto; }
+
+    /* nav */
+    nav.top {
+      position: sticky; top: 14px; z-index: 5;
+      display: flex; justify-content: center;
+      margin: 0 auto; padding-top: 14px;
+      pointer-events: none;
+    }
+    nav.top ul {
+      pointer-events: auto;
+      display: flex; gap: 2px; list-style: none; margin: 0; padding: 5px;
+      background: rgba(255,255,255,.72);
+      -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4);
+      border: 1px solid rgba(20,23,28,.07);
+      border-radius: 999px;
+      box-shadow: 0 6px 24px -12px rgba(20,23,28,.25);
+      opacity: 0; transform: translateY(-8px);
+      transition: opacity .35s ease, transform .35s ease;
+    }
+    nav.top.show ul { opacity: 1; transform: none; }
+    nav.top a {
+      display: block; padding: 6px 13px; border-radius: 999px;
+      font-size: 13.5px; font-weight: 500; color: var(--ink-2);
+      background: none; white-space: nowrap;
+      transition: background-color .25s, color .25s;
+    }
+    nav.top a:hover { background: rgba(20,23,28,.05); color: var(--ink); }
+    nav.top a.active { background: var(--ink); color: #fff; }
+
+    /* hero */
+    .hero {
+      min-height: calc(100svh - 60px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 40px 0 72px;
+      position: relative;
+    }
+    .avatar {
+      --size: 172px;
+      width: var(--size); height: var(--size);
+      border-radius: 50%;
+      padding: 5px;
+      position: relative;
+      isolation: isolate;
+    }
+    .avatar::before {           /* the ring */
+      content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: -1;
+      background: var(--ring);
+      animation: spin 2.4s linear infinite paused;
+    }
+    .avatar::after {            /* tiny ambient glow, same colours as the ring */
+      content: ""; position: absolute; inset: -4px; border-radius: 50%; z-index: -2;
+      background: var(--ring);
+      filter: blur(12px) saturate(1.3); opacity: .55;
+      animation: spin 2.4s linear infinite paused;
+    }
+    .avatar:hover::before, .avatar:hover::after { animation-play-state: running; }
+    @keyframes spin { to { transform: rotate(1turn); } }
+    .avatar img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--paper); background: var(--paper);
+    }
+    h1 {
+      font: 400 clamp(2.6rem, 2rem + 2.4vw, 3.9rem)/1.02 var(--serif);
+      letter-spacing: -0.01em;
+      margin: 26px 0 10px;
+    }
+    .role { font: italic 400 1.28rem/1.35 var(--serif); color: var(--ink-2); margin: 0; }
+    .affil { color: var(--muted); font-size: 15px; margin: 6px 0 0; }
+    .links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+      margin: 26px 0 0; padding: 0; list-style: none;
+    }
+    .links a {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 15px; border-radius: 999px;
+      border: 1px solid var(--hair); background: rgba(255,255,255,.8);
+      color: var(--ink-2); font-size: 14px; font-weight: 500;
+      transition: border-color .25s, color .25s, transform .25s, box-shadow .25s;
+    }
+    .links a:hover { border-color: transparent; color: var(--ink); transform: translateY(-1px); box-shadow: 0 0 0 1.5px var(--blue), 0 8px 20px -10px var(--blue); }
+    .links svg { width: 16px; height: 16px; flex: none; }
+    .scroll-cue {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      width: 1px; height: 46px; overflow: hidden;
+      background: var(--hair);
+    }
+    .scroll-cue::after {
+      content: ""; position: absolute; left: 0; top: -50%; width: 100%; height: 50%;
+      background: linear-gradient(var(--orange), var(--blue));
+      animation: drip 2.2s cubic-bezier(.6,0,.3,1) infinite;
+    }
+    @keyframes drip { to { top: 110%; } }
+
+    /* sections */
+    section { padding: 56px 0 8px; scroll-margin-top: 70px; }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 8px;
+    }
+    .eyebrow::before { content: ""; width: 22px; height: 1.5px; background: linear-gradient(90deg, var(--orange), var(--blue)); }
+    h2 { font: 400 2.35rem/1.1 var(--serif); margin: 0 0 22px; letter-spacing: -0.005em; }
+    h3 { font: 400 1.55rem/1.2 var(--serif); margin: 34px 0 10px; }
+    p { margin: 0 0 1em; color: var(--ink-2); }
+    .lede { font-size: 1.12rem; color: var(--ink); }
+    .bullets { list-style: none; margin: 0 0 1em; padding: 0; }
+    .bullets li { position: relative; padding-left: 1.4em; margin: .4em 0; color: var(--ink-2); }
+    .bullets li::before {
+      content: ""; position: absolute; left: .3em; top: .7em; width: 6px; height: 6px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--blue));
+    }
+    .tex:not(.done) { visibility: hidden; }          /* hide raw TeX until KaTeX has drawn it */
+    .tex[data-display="1"] { display: block; margin: .8em 0; text-align: center; overflow-x: auto; }
+
+    /* timeline rows */
+    .rows { list-style: none; margin: 0; padding: 0; }
+    .rows li {
+      display: grid; grid-template-columns: 7.5rem 1fr; gap: 4px 18px;
+      padding: 16px 0; border-top: 1px solid var(--hair);
+    }
+    .rows li:last-child { border-bottom: 1px solid var(--hair); }
+    .when { font-size: 13.5px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+    .what { color: var(--ink); font-weight: 500; }
+    .where { color: var(--ink-2); font-size: 15px; }
+    .note { color: var(--muted); font-size: 14.5px; margin-top: 2px; }
+
+    /* publications */
+    .pubs { list-style: none; margin: 0; padding: 0; counter-reset: pub 11; }
+    .pubs li {
+      position: relative; padding: 16px 0 16px 3rem; border-top: 1px solid var(--hair);
+      counter-increment: pub -1;
+    }
+    .pubs li:last-child { border-bottom: 1px solid var(--hair); }
+    .pubs li::before {
+      content: counter(pub, decimal-leading-zero);
+      position: absolute; left: 0; top: 18px;
+      font: italic 400 1.15rem/1 var(--serif); color: var(--muted);
+    }
+    .pubs .t { display: block; font-weight: 500; line-height: 1.45; }
+    .pubs .t a { color: var(--ink); }
+    .pubs .t a:hover { color: var(--link); }
+    .pubs .m { display: block; color: var(--muted); font-size: 14.5px; margin-top: 4px; }
+    .pubs .m b, .pubs .m em, .pubs .m strong { color: var(--ink-2); font-weight: 500; font-style: italic; }
+    .pubs .m a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--hair); text-underline-offset: 3px; }
+    .pubs .m a:hover { color: var(--link); }
+    .chip {
+      display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .04em;
+      padding: 1px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 1px;
+      color: var(--rust); background: #fff2e4;
+    }
+
+    /* talks / conferences */
+    .talks { list-style: none; margin: 0; padding: 0; }
+    .talks li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 2px 18px; padding: 14px 0; border-top: 1px solid var(--hair); }
+    .talks li:last-child { border-bottom: 1px solid var(--hair); }
+    .talks .what { font-weight: 500; }
+    .talks .where { font-size: 14.5px; color: var(--muted); }
+    .talks.compact .what { font-weight: 400; color: var(--ink-2); }
+
+    /* ───────────── image dividers: crisp rounded frame + ambient glow ───────────── */
+    .divider {
+      position: relative;
+      margin: 72px 0 16px;
+      aspect-ratio: 16 / 9;
+      isolation: isolate;
+    }
+    .divider::before {          /* the image casts its own coloured light */
+      content: ""; position: absolute; inset: -1%; z-index: -1;
+      background: var(--src) center / cover no-repeat;
+      filter: blur(31px) saturate(1.95);
+      opacity: .9;
+      border-radius: 32px;
+      /* give the blur its own compositing layer, so the browser doesn't clip it
+         at a paint-tile boundary (that showed up as an occasional hard horizontal cut) */
+      transform: translateZ(0);
+      will-change: transform;
+      pointer-events: none;
+    }
+    .divider .frame {
+      height: 100%; overflow: hidden; border-radius: 16px;
+      background: var(--paper);   /* solid backing so the glow never shows through */
+      box-shadow: 0 0 0 1px rgba(20,23,28,.06);
+    }
+    .divider img {
+      width: 100%; height: 100%; object-fit: cover;
+      transform: scale(var(--zoom, 1.06));
+      transition: transform 1.6s cubic-bezier(.2,.7,.2,1);
+    }
+    .divider.in img { transform: none; }   /* end on no transform: Safari can leave scaled bitmaps soft */
+
+    /* closing note about the images: reads like a footnote */
+    .note-section { padding-top: 64px; }
+    .note-section p, .note-section .bullets li { font-size: 14.5px; line-height: 1.7; color: var(--muted); }
+
+    footer {
+      padding: 72px 0 40px; text-align: center; color: var(--muted); font-size: 13px;
+    }
+
+    /* reveal on scroll (only when JS is running) */
+    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* ───────────────────────── narrow / portrait ───────────────────────── */
+    @media (max-width: 900px), (max-aspect-ratio: 4/3) {
+      /* the print turns 90°: stripes pour down from the top and the fringe lands on the photo */
+      :root { --band: min(calc(100vw * 0.72), 62svh); }
+      .print {
+        position: absolute; width: 100%; height: var(--band);
+        -webkit-mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+                mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
+      }
+      .print img { object-position: center bottom; }
+      main { margin-left: 0; }
+      nav.top { position: fixed; left: 0; right: 0; top: 10px; padding: 0 12px; }
+      nav.top ul { overflow-x: auto; scrollbar-width: none; max-width: 100%; }
+      nav.top ul::-webkit-scrollbar { display: none; }
+      nav.top a { padding: 6px 11px; font-size: 13px; }
+      .hero { min-height: auto; padding: calc(var(--band) - 84px) 0 40px; }
+      .avatar { --size: 148px; }
+      .scroll-cue { display: none; }
+      .divider { margin-top: 56px; }
+    }
+    @media (max-width: 600px) {
+      :root { --band: min(calc(100vw * 1.2), 62svh); }
+    }
+    @media (max-width: 520px) {
+      .rows li, .talks li { grid-template-columns: 1fr; gap: 2px; }
+      .pubs li { padding-left: 2.3rem; }
+      h2 { font-size: 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .divider img { transform: none; transition: none; }
+      .scroll-cue::after { animation: none; }
+      .avatar::before, .avatar::after { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.classList.add('js')</script>
+
+  <div class="print" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 600px)" srcset="assets/hero-v-narrow.webp">
+      <source media="(max-width: 900px), (max-aspect-ratio: 4/3)" srcset="assets/hero-v.webp">
+      <img src="assets/hero.webp" srcset="assets/hero.webp 1720w, assets/hero-xl.webp 3440w"
+           sizes="(min-aspect-ratio: 84/55) 55vw, 84vh" alt="" fetchpriority="high">
+    </picture>
+  </div>
+
+  <main>
+    <nav class="top" aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Papers</a></li>
+        <li><a href="#talks">Talks</a></li>
+        <li><a href="#work">Work</a></li>
+      </ul>
+    </nav>
+
+    <div class="col">
+      <header class="hero" id="top">
+        <div class="avatar reveal"><img src="assets/profile.jpg" alt="Salvatore Mercuri" width="480" height="480"></div>
+        <h1 class="reveal" data-field="name">Salvatore Mercuri</h1>
+        <p class="role reveal" data-field="role">Chapman-Schmidt Postdoctoral Fellow</p>
+        <p class="affil reveal" data-field="affiliation">Department of Mathematics, Imperial College London</p>
+        <ul class="links reveal" data-field="links"></ul>
+        <div class="scroll-cue" aria-hidden="true"></div>
+      </header>
+
+      <!-- Empty slots are filled from content/*.md by generate_html.py. -->
+
+      <section id="about" class="reveal">
+        <p class="eyebrow">About</p>
+        <div data-md="about"></div>
+      </section>
+
+      <figure class="divider reveal" style="--src:url('assets/print1.webp')">
+        <div class="frame"><img src="assets/print1.webp" alt="Complex phase plot in pink and blue, coloured by argument" width="1920" height="1080" loading="lazy"></div>
+      </figure>
+
+      <section id="publications" class="reveal">
+        <p class="eyebrow">Research</p>
+        <h2>Publications</h2>
+        <ol class="pubs" data-md="publications"></ol>
+      </section>
+
+      <figure class="divider reveal" style="--src:url('assets/thetaz6.webp')">
+        <div class="frame"><img src="assets/thetaz6.webp" alt="Complex phase plot of a theta function, coloured by argument" width="1920" height="1080" loading="lazy"></div>
+      </figure>
+
+      <section id="talks" class="reveal">
+        <p class="eyebrow">Speaking</p>
+        <h2>Talks</h2>
+        <ul class="talks" data-md="talks"></ul>
+        <h3>Recent conferences &amp; workshops</h3>
+        <ul class="talks compact" data-md="conferences"></ul>
+      </section>
+
+      <figure class="divider reveal" style="--src:url('assets/modeta6.webp')">
+        <div class="frame"><img src="assets/modeta6.webp" alt="Complex phase plot of a modular form, coloured by argument" width="1920" height="1080" loading="lazy"></div>
+      </figure>
+
+      <section id="work" class="reveal">
+        <p class="eyebrow">Experience</p>
+        <h2>Employment</h2>
+        <ul class="rows" data-md="employment"></ul>
+        <h3>Education</h3>
+        <ul class="rows" data-md="education"></ul>
+      </section>
+
+      <section id="images" class="note-section reveal" data-md="images"></section>
+
+      <footer>
+        <span data-field="footer">© Salvatore Mercuri</span>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+  (function () {
+    /* ───────────── email button ───────────── */
+    // Put together here from "name (at) host", so the address never appears in the HTML for scrapers.
+    var links = document.querySelector('[data-field="links"]');
+    var raw = links && links.getAttribute('data-email');
+    if (raw) {
+      var addr = raw.replace(/\s*\(at\)\s*/i, '@').replace(/\s+/g, '');
+      links.insertAdjacentHTML('afterbegin', '<li><a href="mailto:' + addr + '">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>' +
+        '<span>' + addr + '</span></a></li>');
+    }
+
+    if (document.querySelector('.tex')) typeset();
+    start();
+
+    /* ───────────── LaTeX: load KaTeX only when a file contains $...$ ───────────── */
+    function typeset() {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css';
+      document.head.appendChild(css);
+      var js = document.createElement('script');
+      js.src = 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js';
+      js.onload = function () {
+        document.querySelectorAll('.tex').forEach(function (el) {
+          try { katex.render(el.textContent, el, { displayMode: el.dataset.display === '1', throwOnError: false }); }
+          catch (e) { console.error(e); }
+          el.classList.add('done');
+        });
+      };
+      js.onerror = function () { document.querySelectorAll('.tex').forEach(function (el) { el.classList.add('done'); }); };
+      document.head.appendChild(js);
+    }
+
+    /* ───────────── page behaviour ───────────── */
+    function start() {
+      // Reveal-on-scroll
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      // Nav: appear after the hero, highlight the current section
+      var nav = document.querySelector('nav.top');
+      var hero = document.querySelector('.hero');
+      var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+      var sections = links.map(function (l) { return document.querySelector(l.getAttribute('href')); });
+      function onScroll() {
+        nav.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.45);
+        var current = -1;
+        sections.forEach(function (s, i) { if (s.getBoundingClientRect().top < window.innerHeight * 0.35) current = i; });
+        links.forEach(function (l, i) { l.classList.toggle('active', i === current); });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  })();
+  </script>
+</body>
+</html>
